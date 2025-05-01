@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 123, 104, 238;
+  --color-secondary: 0, 206, 209;
+  --color-accent: 255, 140, 0;
+  --color-success: 72, 187, 120;
+  --color-warning: 246, 173, 85;
+  --color-error: 245, 101, 101;
+}
+
+body {
+  @apply antialiased font-sans text-base leading-relaxed;
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(var(--color-primary), 0.02) 2%, transparent 0%),
+    radial-gradient(circle at 75px 75px, rgba(var(--color-secondary), 0.02) 2%, transparent 0%);
+  background-size: 100px 100px;
+}
+
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.light body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-bold leading-tight;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-md px-5 py-2.5 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+}
+
+.btn-secondary {
+  @apply bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-500;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.section {
+  @apply py-16;
+}
+
+.container {
+  @apply px-4 mx-auto max-w-7xl;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300;
+}
+
+/* Stylized scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-300 dark:bg-primary-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-400 dark:bg-primary-500;
+}
